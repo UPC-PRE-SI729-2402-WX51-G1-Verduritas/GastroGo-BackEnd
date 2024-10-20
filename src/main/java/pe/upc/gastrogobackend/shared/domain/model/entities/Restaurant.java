@@ -1,7 +1,7 @@
 package pe.upc.gastrogobackend.shared.domain.model.entities;
 
 /**
- * @summary Restaurant represents a restaurant entity in the system.
+ * @summary Represents a restaurant in the system.
  */
 public class Restaurant {
     private String restaurantId;
@@ -10,10 +10,14 @@ public class Restaurant {
     private String email;
     private String password;
 
-    /**
-     * @summary Modifies restaurant data.
-     */
-    public void modifyData() {
+    public Restaurant(String restaurantId, String restaurantName, String phone, String email, String password) {
+        this.restaurantId = restaurantId;
+        this.restaurantName = restaurantName;
+        this.phone = phone;
+        this.email = email;
+        this.password = password;
     }
 
+    public void modifyData() {
+    }
 }

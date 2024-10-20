@@ -1,27 +1,24 @@
 package pe.upc.gastrogobackend.shared.domain.model.entities;
 
-import java.util.Date;
-
 /**
- * @summary Membership class represents a subscription membership for users or restaurants.
+ * @summary Represents a membership plan.
  */
-
 public class Membership {
     private String membershipId;
     private String membershipName;
-    private Date startDate;
-    private Date finishDate;
+    private String startDate;
+    private String finishDate;
 
-    /**
-     * @summary Creates a new membership.
-     */
+    public Membership(String membershipId, String membershipName, String startDate, String finishDate) {
+        this.membershipId = membershipId;
+        this.membershipName = membershipName;
+        this.startDate = startDate;
+        this.finishDate = finishDate;
+    }
+
     public void createMembership() {
     }
 
-    /**
-     * @summary Processes payment for the membership.
-     */
     public void paymentInfo() {
     }
-
 }

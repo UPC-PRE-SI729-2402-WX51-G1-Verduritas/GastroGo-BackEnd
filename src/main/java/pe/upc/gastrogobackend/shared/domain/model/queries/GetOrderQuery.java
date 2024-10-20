@@ -1,8 +1,7 @@
 package pe.upc.gastrogobackend.shared.domain.model.queries;
 
 /**
- * Query to retrieve an Order by its ID.
- * Using a record simplifies immutable data storage.
+ * @summary Query to retrieve the details of an order.
  */
 public record GetOrderQuery(Long id) {
     public GetOrderQuery {

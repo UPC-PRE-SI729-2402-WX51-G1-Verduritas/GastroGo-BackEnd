@@ -1,10 +1,10 @@
 package pe.upc.gastrogobackend.shared.domain.model.commands;
 
 /**
- * Command to create an Order.
+ * @summary Command to create a new order in the system.
  */
 
-public class CreateOrderCommand {
-
+public record CreateOrderCommand(String orderId, String userId, String menuId, double total) {
 
 }
+

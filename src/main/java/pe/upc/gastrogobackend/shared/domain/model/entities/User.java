@@ -1,28 +1,31 @@
 package pe.upc.gastrogobackend.shared.domain.model.entities;
-
 /**
- * @summary User represents an individual who uses the system.
+ * @summary Represents a user in the system.
  */
 public class User {
     private String userId;
-    private String dniUser;
+    private String dni;
     private String name;
-    private String lastName;
+    private String lastname;
     private String address;
     private String userType;
     private String email;
     private String password;
 
-    /**
-     * @summary Registers a new user.
-     */
+    public User(String userId, String dni, String name, String lastname, String address, String userType, String email, String password) {
+        this.userId = userId;
+        this.dni = dni;
+        this.name = name;
+        this.lastname = lastname;
+        this.address = address;
+        this.userType = userType;
+        this.email = email;
+        this.password = password;
+    }
+
     public void register() {
     }
 
-    /**
-     * @summary Logs in a user.
-     */
     public void logIn() {
     }
-
 }
