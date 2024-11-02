@@ -10,27 +10,31 @@ import static io.github.encryptorcode.pluralize.Pluralize.pluralize;
 public class SnakeClassWithPluralizedTablePhysicalNamingStrategy implements PhysicalNamingStrategy {
     @Override
     public Identifier toPhysicalCatalogName(Identifier identifier, JdbcEnvironment jdbcEnvironment) {
-        return null;
+
+        return this.toSnakeCase(identifier);
     }
 
     @Override
     public Identifier toPhysicalSchemaName(Identifier identifier, JdbcEnvironment jdbcEnvironment) {
-        return null;
+
+        return this.toSnakeCase(identifier);
     }
 
     @Override
     public Identifier toPhysicalTableName(Identifier identifier, JdbcEnvironment jdbcEnvironment) {
-        return null;
+        return this.toSnakeCase(this.toPlural(identifier));
     }
 
     @Override
     public Identifier toPhysicalSequenceName(Identifier identifier, JdbcEnvironment jdbcEnvironment) {
-        return null;
+
+        return this.toSnakeCase(identifier);
     }
 
     @Override
     public Identifier toPhysicalColumnName(Identifier identifier, JdbcEnvironment jdbcEnvironment) {
-        return null;
+
+        return this.toSnakeCase(identifier);
     }
 
     private Identifier toSnakeCase(final Identifier identifier) {
