@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @OpenAPIDefinition(
         info = @Info(
-                title = "API-GASTROGO",
+                title = "API-Gastrogo",
                 version = "1.0",
                 description = "Mantenimiento de una Persona"
         )
@@ -25,7 +25,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class OrderController {
     @Operation(summary = "Get all orders")
     @GetMapping("/all")
-    @DeleteMapping ("/delete")
+
+
     public ResponseEntity<String> obtenerPersona(){
 
         return ResponseEntity
@@ -34,4 +35,11 @@ public class OrderController {
 
     }
 
+        @DeleteMapping("/delete")
+    public ResponseEntity<String> BorrarOrder() {
+
+     return ResponseEntity
+             .status(HttpStatus.OK)
+            .body("order1");
+    }
 }
