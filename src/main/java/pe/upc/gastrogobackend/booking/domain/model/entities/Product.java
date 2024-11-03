@@ -22,9 +22,9 @@ public class Product extends AuditableModel {
     private Category category;
     private Long stock;
     private Price price;
-    private Long menuId;
+
     @ManyToOne
-    @JoinColumn(name = "menu_id")
+    @JoinColumn(name = "menu_id", nullable = false)
     private Menu menu;
 
 
@@ -35,6 +35,7 @@ public class Product extends AuditableModel {
     }
 
     public void SetPrice(Price price) {
+
         this.price = price;
     }
 

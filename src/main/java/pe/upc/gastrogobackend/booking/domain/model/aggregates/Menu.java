@@ -1,6 +1,10 @@
 package pe.upc.gastrogobackend.booking.domain.model.aggregates;
 
 
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -16,12 +20,14 @@ import java.util.List;
 @Getter
 @Setter
 @RequiredArgsConstructor
-
+@Entity
 public class Menu extends AuditableAbstractAggregateRoot<Menu> {
-
+    @Id
     public Long id;
     public String name;
     public Category status;
+
+    @OneToMany(mappedBy = "menu", cascade = CascadeType.ALL, orphanRemoval = true)
     public final List<Product> products = new ArrayList<>();
 
     public List<Product> getProducts() {

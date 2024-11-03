@@ -1,7 +1,7 @@
 package pe.upc.gastrogobackend.orders.appplication.internal.commandservices;
 
 import org.springframework.stereotype.Service;
-import pe.upc.gastrogobackend.orders.domain.model.aggregates.Order;
+import pe.upc.gastrogobackend.orders.domain.model.aggregates.OrderEntity;
 import pe.upc.gastrogobackend.orders.domain.model.commands.CreateOrderCommand;
 import pe.upc.gastrogobackend.orders.domain.services.OrderCommandService;
 import pe.upc.gastrogobackend.orders.infrastructure.persistence.jpa.repositories.OrderRepository;
@@ -19,8 +19,8 @@ public class OrderCommandServiceImpl implements OrderCommandService {
     }
 
     @Override
-    public Optional<Order> handle(CreateOrderCommand createOrderCommand) {
-        var order = new Order(createOrderCommand);
+    public Optional<OrderEntity> handle(CreateOrderCommand createOrderCommand) {
+        var order = new OrderEntity(createOrderCommand);
         try {
             orderRepository.save(order);
             return Optional.of(order);

@@ -7,14 +7,12 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import pe.upc.gastrogobackend.orders.domain.model.commands.CreateOrderCommand;
 import pe.upc.gastrogobackend.orders.domain.model.entities.OrderItem;
-import pe.upc.gastrogobackend.shared.domain.model.aggregates.AuditableAbstractAggregateRoot;
 
-import java.util.Date;
 import java.util.List;
 
 @Entity
 @NoArgsConstructor
-public class Order {
+public class OrderEntity {
 
     /** The order id */
     @Id
@@ -62,7 +60,7 @@ public class Order {
     }*/
     /// Para cuando tengas tu base de datos
 
-    public Order(CreateOrderCommand command) {
+    public OrderEntity(CreateOrderCommand command) {
         this.restaurantName = command.restaurantName();
         this.orderDate = command.orderDate();
         this.status = command.status();
