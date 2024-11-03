@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @OpenAPIDefinition(
         info = @Info(
-                title = "API-PERSONA",
+                title = "API-GASTROGO",
                 version = "1.0",
                 description = "Mantenimiento de una Persona"
         )
