@@ -7,7 +7,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import pe.upc.gastrogobackend.orders.domain.model.aggregates.Order;
 import pe.upc.gastrogobackend.orders.domain.model.commands.CreateOrderCommand;
 import pe.upc.gastrogobackend.orders.domain.services.OrderCommandService;
 
